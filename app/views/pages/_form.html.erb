@@ -12,26 +12,31 @@
   <% end %>
 
   <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name, placeholder: "My website" %>
+  </div>
+
+  <div>
     <%= form.label :url, style: "display: block" %>
-    <%= form.text_field :url %>
+    <%= form.url_field :url, placeholder: "https://example.org/..." %>
   </div>
 
   <div>
     <%= form.label :check_type, style: "display: block" %>
-    <%= form.select :check_type, [['Text','text'], ['Exists', 'exists'], ['Not exists', 'not_exists']] %>
+    <%= form.select :check_type, [["Text", "text"], ["Exists", "exists"], ["Not exists", "not_exists"]] %>
   </div>
 
   <div>
     <%= form.label :selector, style: "display: block" %>
-    <%= form.text_field :selector %>
+    <%= form.text_field :selector, placeholder: ".class" %>
   </div>
 
   <div>
     <%= form.label :match_text, style: "display: block" %>
-    <%= form.text_field :match_text %>
+    <%= form.text_field :match_text, placeholder: "text to match" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="mt-4">
+    <%= form.submit class: "border border-gray-200 rounded shadow px-2 py-1 hover:bg-gray-100"%>
   </div>
 <% end %>
